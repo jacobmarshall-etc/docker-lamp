@@ -1,0 +1,11 @@
+apache:
+  build: ./apache
+  volumes:
+    - "./apache/www:/var/www/html"
+  net: host
+mysql:
+  build: ./mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+  volumes:
+    - "./mysql/data:/var/lib/mysql"
